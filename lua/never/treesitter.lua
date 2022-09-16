@@ -3,8 +3,10 @@ if not status_ok then
 	return
 end
 
-
 configs.setup({
+	ensure_installed = {'c', 'cpp', 'haxe', 'lua'},
+	sync_install = true,
+  auto_install = false,
 	highlight = {
 		enable = true,
 	},
