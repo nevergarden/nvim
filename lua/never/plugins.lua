@@ -29,6 +29,14 @@ packer.init {
 -- Intall Plugins
 return packer.startup(function(use)
 	use 'wbthomason/packer.nvim' -- Package Manager
+	use 'neovim/nvim-lspconfig'  -- Neovim LSP configurations
+
+	-- CMP:
+	use 'hrsh7th/cmp-nvim-lsp'   -- CMP for language server
+  use 'hrsh7th/cmp-buffer'     -- CMP for buffer
+	use 'hrsh7th/cmp-path'       -- CMP for paths
+  use 'hrsh7th/cmp-cmdline'    -- CMP for commandline
+	use 'hrsh7th/nvim-cmp'       -- Neovim Completion
 
 	-- Colorschemes
 	use 'morhetz/gruvbox'

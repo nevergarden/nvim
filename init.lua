@@ -1,3 +1,5 @@
 require 'never.options'
 require 'never.plugins'
 require 'never.colorscheme'
+require 'never.lsp'
+require 'never.cmp'
