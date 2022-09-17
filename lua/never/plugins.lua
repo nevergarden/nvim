@@ -65,6 +65,11 @@ return packer.startup(function(use)
 	-- Hop
 	use 'phaazon/hop.nvim'                    -- Hop for fast jumping
 
+	-- Lualine
+	use {
+		'nvim-lualine/lualine.nvim',         -- Lualine
+	}
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end

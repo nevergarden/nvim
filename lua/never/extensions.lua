@@ -17,3 +17,13 @@ status_ok, hop = pcall(require, 'hop')
 if status_ok then
 	hop.setup()
 end
+
+local lualine
+status_ok, lualine = pcall(require, 'lualine')
+if status_ok then
+	lualine.setup({
+		options = {
+			theme = 'gruvbox'
+		}
+	})
+end
