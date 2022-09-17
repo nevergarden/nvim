@@ -11,3 +11,6 @@ vim.g.maplocalleader = " "
 
 -- Nvim Tree
 keymap("n", "<C-b>", ":NvimTreeToggle<CR>", opts)
+
+-- Hop Mappings
+keymap("n", 'f', ':HopWord<CR>', opts)

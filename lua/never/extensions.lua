@@ -11,3 +11,9 @@ status_ok, nvimtree = pcall(require, 'nvim-tree')
 if status_ok then
 	nvimtree.setup()
 end
+
+local hop
+status_ok, hop = pcall(require, 'hop')
+if status_ok then
+	hop.setup()
+end
