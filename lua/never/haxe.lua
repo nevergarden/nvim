@@ -1,6 +1,9 @@
 -- Set haxe filetypes
 vim.cmd [[ au BufNewFile,BufRead *.hx,*.hxml setfiletype haxe ]]
 local install_path = vim.fn.stdpath('data') .. '/site/tree-sitter-haxe'
+local haxe_ls_path = vim.env.HAXE_LANGUAGE_SERVER
+
+local has_notifier, notify = pcall(require, 'notify')
 
 -- Bootstrap Haxe-Treesitter
 local fn = vim.fn
@@ -29,6 +32,24 @@ if not lspconfig_status_ok then
 	return
 end
 
+-- Bootstrap Installing Haxe Language Serever
+local hxls_bin = ''
+
+if not haxe_ls_path then
+	haxe_ls_path = fn.stdpath('data') .. '/lsp_servers/haxe_language_server'
+end
+
+if fn.empty(fn.glob(haxe_ls_path)) > 0 then
+	local hls_git = "https://github.com/vshaxe/haxe-language-server"
+	fn.system({'git', 'clone', '--depth=1', hls_git, haxe_ls_path})
+end
+
+hxls_bin = haxe_ls_path .. '/bin/server.js'
+if(fn.empty(fn.glob(hxls_bin))) > 0 then
+	os.execute('cd ' .. haxe_ls_path .. ' && npm install > /dev/null')
+	os.execute('cd ' .. haxe_ls_path .. ' && npx lix run vshaxe-build -t language-server > /dev/null')
+end
+
 lspconfig['haxe_language_server'].setup({
-	cmd = {'node', '/home/nevergarden/haxe-language-server/bin/server.js'},
+	cmd = {'node', hxls_bin},
 })

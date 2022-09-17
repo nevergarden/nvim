@@ -52,6 +52,7 @@ return packer.startup(function(use)
 	use 'lukas-reineke/indent-blankline.nvim' -- Shows indentations
 	use 'andymass/vim-matchup'                -- Auto Matchup Start Ends
 	use 'nacro90/numb.nvim'                   -- Number peeking
+	use 'rcarriga/nvim-notify'                -- Nice Notifier
 
 	-- File Explorer
 	use {
