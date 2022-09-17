@@ -76,6 +76,15 @@ return packer.startup(function(use)
 		requires = { {'nvim-lua/plenary.nvim'} }
 	}
 
+	-- Diffview
+	use {
+		'sindrets/diffview.nvim',
+		requires = 'nvim-lua/plenary.nvim'
+	}
+
+	-- Gitgutter
+	use 'airblade/vim-gitgutter'
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end
