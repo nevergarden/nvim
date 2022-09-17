@@ -14,3 +14,10 @@ keymap("n", "<C-b>", ":NvimTreeToggle<CR>", opts)
 
 -- Hop Mappings
 keymap("n", 'f', ':HopWord<CR>', opts)
+
+-- Telescope
+keymap("n", '<C-p>', ':Telescope<CR>', opts)
+keymap("n", '<C-f>', ':Telescope current_buffer_fuzzy_find<CR>', opts)
+keymap("n", '<Leader>o', ':Telescope fd<CR>', opts)
+keymap("n", '<Leader>t', ':Telescope treesitter<CR>', opts)
+keymap("n", '<C-k><C-t>', ':Telescope colorscheme<CR>', opts)

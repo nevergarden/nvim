@@ -70,6 +70,12 @@ return packer.startup(function(use)
 		'nvim-lualine/lualine.nvim',         -- Lualine
 	}
 
+	-- Telescope
+	use {
+		'nvim-telescope/telescope.nvim', tag = '0.1.0',
+		requires = { {'nvim-lua/plenary.nvim'} }
+	}
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end
