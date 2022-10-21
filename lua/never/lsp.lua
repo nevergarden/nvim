@@ -35,3 +35,8 @@ lspconfig['sumneko_lua'].setup({
 		},
 	}
 })
+
+lspconfig['cmake'].setup({
+	cmd = {'cmake-language-server'},
+	filetypes = {'cmake'},
+})

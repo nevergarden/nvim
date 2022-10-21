@@ -7,7 +7,9 @@ local options = {
   number = true, -- enable line numbering
   relativenumber = true, -- enable relative numbering
   numberwidth = 4,   -- width of number columns
-	signcolumn= "yes", -- git gutter always have sign column
+	signcolumn = "yes", -- git gutter always have sign column
+	autoindent = true, -- indent from last line
+	smartindent = true,
 }
 
 vim.opt.shortmess:append "c"
