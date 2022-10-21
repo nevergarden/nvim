@@ -85,6 +85,12 @@ return packer.startup(function(use)
 	-- Gitgutter
 	use 'airblade/vim-gitgutter'
 
+	-- Diagnostics (Trouble):
+	use {
+		"folke/trouble.nvim",
+		requires = "kyazdani42/nvim-web-devicons",
+	}
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end

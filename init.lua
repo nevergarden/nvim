@@ -6,6 +6,7 @@ require 'never.lsp'
 require 'never.cmp'
 require 'never.extensions'
 require 'never.mappings'
+require 'never.trouble'
 
 -- Languages:
 require 'never.haxe'

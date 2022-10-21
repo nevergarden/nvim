@@ -21,3 +21,6 @@ keymap("n", '<C-f>', ':Telescope current_buffer_fuzzy_find<CR>', opts)
 keymap("n", '<Leader>o', ':Telescope fd<CR>', opts)
 keymap("n", '<Leader>t', ':Telescope treesitter<CR>', opts)
 keymap("n", '<C-k><C-t>', ':Telescope colorscheme<CR>', opts)
+
+-- Trouble
+keymap("n", '<Leader>d', ':Trouble<CR>', opts)
