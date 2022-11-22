@@ -1,9 +1,7 @@
 local jdtls_ok, jdtls = pcall(require, 'jdtls')
 if not jdtls_ok then
-	vim.notify( 'nvim-jdtls not found.' )
 	return
 end
-
 
 local HOME = os.getenv 'HOME'
 local JDTLS_LOCATION = HOME .. '/.local/share/jdtls'
@@ -12,11 +10,12 @@ local WORKSPACE_PATH = HOME .. '/.cache/java/'
 local project_name = vim.fn.fnamemodify( vim.fn.getcwd(), ':p:h:t')
 local workspace_dir = WORKSPACE_PATH .. project_name
 
-local root_markers = { '.git', 'mvnw', 'gradlew', 'pom.xml', 'build.gradle' }
-local root_dir = require('jdtls.setup').find_root(root_markers)
-if root_dir == '' then
-	return
-end
+-- local root_markers = { '.git', 'mvnw', 'gradlew', 'pom.xml', 'build.gradle' }
+
+-- local root_dir = require('jdtls.setup').find_root(root_markers)
+-- if root_dir == '' then
+--	return
+-- end
 
 local exCapabilities = jdtls.extendedClientCapabilities
 exCapabilities.resolveAdditionalTextEditSupport = true
@@ -42,10 +41,7 @@ local config = {
     "-data",
     workspace_dir,
   },
-
-	--capabilities = require('lspconfig').capabilities,
-	root_dir = root_dir,
-	  settings = {
+	settings = {
     java = {
       eclipse = {
         downloadSources = true,
@@ -100,43 +96,12 @@ local config = {
       useBlocks = true,
     },
   },
-
   flags = {
     allow_incremental_sync = true,
   },
-  -- Language server `initializationOptions`
-  -- You need to extend the `bundles` with paths to jar files
-  -- if you want to use additional eclipse.jdt.ls plugins.
-  --
-  -- See https://github.com/mfussenegger/nvim-jdtls#java-debug-installation
-  --
-  -- If you don't plan on using the debugger or other eclipse.jdt.ls plugins you can remove this
   init_options = {
     bundles = {},
   },
-}
-
-local configs = {
-  cmd = {
-    'java',
-		'-Declipse.application=org.eclipse.jdt.ls.core.id1',
-    '-Dosgi.bundles.defaultStartLevel=4',
-    '-Declipse.product=org.eclipse.jdt.ls.core.product',
-    '-Dlog.protocol=true',
-    '-Dlog.level=ALL',
-    '-Xms1g',
-    '--add-modules=ALL-SYSTEM',
-    '--add-opens', 'java.base/java.util=ALL-UNNAMED',
-    '--add-opens', 'java.base/java.lang=ALL-UNNAMED',
-		'-jar', '/home/nevergarden/.local/share/jdtls/plugins/org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar',
-    "-configuration", '/home/nevergarden/.local/share/jdtls/config_linux',
-    '-data', workspace_dir
-  },
-  root_dir = require('jdtls.setup').find_root({'.git', 'mvnw', 'gradlew'}),
-  settings = {
-    java = {
-    }
-  }
 }
 
 local lspconfig_status_ok, lspconfig = pcall(require, 'lspconfig')
@@ -145,7 +110,4 @@ if not lspconfig_status_ok then
 	return
 end
 
--- lspconfig['jdtls'].setup(config)
-
-require('jdtls').start_or_attach(config)
-vim.notify "here?"
+lspconfig['jdtls'].setup(config)
