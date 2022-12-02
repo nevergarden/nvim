@@ -95,6 +95,9 @@ return packer.startup(function(use)
 		requires = "kyazdani42/nvim-web-devicons",
 	}
 
+	-- Java
+	use { 'mfussenegger/nvim-jdtls' }
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end

@@ -10,4 +10,5 @@ require 'never.trouble'
 
 -- Languages:
 require 'never.haxe'
+require 'never.java'
 require 'never.treesitter'
