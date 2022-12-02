@@ -15,7 +15,8 @@ end
 local ts_parsers_ok, ts_parsers = pcall(require, "nvim-treesitter.parsers")
 if ts_parsers_ok then
 	local parser_config = ts_parsers.get_parser_configs()
-	parser_config.haxe = {
+		parser_config.haxe = {
+		highlight = { enable = true },
 		install_info = {
 			url = install_path,
 			files = {"src/parser.c"},
@@ -24,6 +25,8 @@ if ts_parsers_ok then
 		},
 		filetype = "hx",
 	}
+	-- copy treesitter queries to /site/pack/packer/start/nvim-treesitter/queries/haxe manually
+	-- os.execute('cp ' .. fn.stdpath('data') .. '/site/tree-sitter-haxe/queries/* ' .. fn.stdpath('data') .. '/site/pack/packer/start/nvim-treesitter/queries/haxe')
 end
 
 -- LSP for Haxe
@@ -46,8 +49,8 @@ end
 
 hxls_bin = haxe_ls_path .. '/bin/server.js'
 if(fn.empty(fn.glob(hxls_bin))) > 0 then
-	os.execute('cd ' .. haxe_ls_path .. ' && npm install > /dev/null')
-	os.execute('cd ' .. haxe_ls_path .. ' && npx lix run vshaxe-build -t language-server > /dev/null')
+	os.execute('cd ' .. haxe_ls_path .. ' && npm install')
+	os.execute('cd ' .. haxe_ls_path .. ' && npx lix run vshaxe-build -t language-server')
 end
 
 lspconfig['haxe_language_server'].setup({

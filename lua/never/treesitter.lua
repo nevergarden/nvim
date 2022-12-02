@@ -3,6 +3,11 @@ if not status_ok then
 	return
 end
 
+local installs = require 'nvim-treesitter.install';
+
+installs.prefer_git = false
+installs.compilers = { 'clang' }
+
 configs.setup({
 	ensure_installed = {'c', 'cpp', 'haxe', 'lua'},
 	sync_install = true,

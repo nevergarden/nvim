@@ -45,8 +45,12 @@ return packer.startup(function(use)
 	use 'morhetz/gruvbox'        -- Gruvbox colorscheme
 
 	-- Treesitter
-	use 'nvim-treesitter/nvim-treesitter' -- Treesitter plugin
-	use 'p00f/nvim-ts-rainbow'            -- Rainbow coloring
+	use {
+		'p00f/nvim-ts-rainbow',            -- Rainbow coloring
+		requires = {
+			'nvim-treesitter/nvim-treesitter',   -- Treesitter plugin
+		},
+	}
 
 	-- UI
 	use 'lukas-reineke/indent-blankline.nvim' -- Shows indentations
