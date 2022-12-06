@@ -9,7 +9,7 @@ installs.prefer_git = false
 installs.compilers = { 'clang' }
 
 configs.setup({
-	ensure_installed = {'c', 'cpp', 'haxe', 'lua'},
+	ensure_installed = {'c', 'cpp', 'haxe', 'lua', 'fish', 'java'},
 	sync_install = true,
   auto_install = false,
 	highlight = {
