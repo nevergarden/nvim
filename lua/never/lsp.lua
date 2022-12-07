@@ -14,7 +14,8 @@ vim.notify = function(msg, log_level)
 	end
 end
 
-lspconfig['clangd'].setup({})
+--lspconfig['clangd'].setup({})
+lspconfig['ccls'].setup({})
 
 lspconfig['sumneko_lua'].setup({
 	settings = {

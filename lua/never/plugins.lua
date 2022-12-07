@@ -65,6 +65,7 @@ return packer.startup(function(use)
 			'kyazdani42/nvim-web-devicons',       -- Icons for browser
 		},
 	}
+	use 'mcchrish/nnn.vim'                    -- Also nnn
 
 	-- Hop
 	use 'phaazon/hop.nvim'                    -- Hop for fast jumping
