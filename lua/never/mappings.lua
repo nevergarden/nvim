@@ -24,3 +24,7 @@ keymap("n", '<C-k><C-t>', ':Telescope colorscheme<CR>', opts)
 
 -- Trouble
 keymap("n", '<Leader>d', ':Trouble<CR>', opts)
+
+-- Don't lose visual on indentation
+keymap("v", '<', '<gv', opts)
+keymap("v", '>', '>gv', opts)
