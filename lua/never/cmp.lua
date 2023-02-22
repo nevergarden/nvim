@@ -93,8 +93,8 @@ cmp.setup {
       vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
       vim_item.menu = ({
         nvim_lsp = "[LSP]",
-        buffer = "[Buffer]",
-        path = "[Path]",
+        buffer = "[BUF]",
+        path = "[PATH]",
       })[entry.source.name]
       return vim_item
     end,

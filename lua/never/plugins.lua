@@ -60,9 +60,9 @@ return packer.startup(function(use)
 
 	-- File Explorer
 	use {
-		'kyazdani42/nvim-tree.lua',             -- File Browser
+		'nvim-tree/nvim-tree.lua',             -- File Browser
 		requires = {
-			'kyazdani42/nvim-web-devicons',       -- Icons for browser
+			'nvim-tree/nvim-web-devicons',       -- Icons for browser
 		},
 	}
 	use 'mcchrish/nnn.vim'                    -- Also nnn
