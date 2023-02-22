@@ -3,4 +3,4 @@ if not lspconfig_status_ok then
 	return
 end
 
-lspconfig['clangd'].setup({})
+lspconfig["pyright"].setup({})
