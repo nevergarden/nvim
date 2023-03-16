@@ -23,7 +23,7 @@ status_ok, lualine = pcall(require, 'lualine')
 if status_ok then
 	lualine.setup({
 		options = {
-			theme = 'gruvbox'
+			theme = 'auto'
 		}
 	})
 end
