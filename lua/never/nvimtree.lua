@@ -41,6 +41,9 @@ nvim_tree.setup({
 			},
 		},
 	},
+	notify = {
+		threshold= vim.log.levels.DEBUG,
+	},
 	renderer = {
 		icons = {
 			glyphs = {
