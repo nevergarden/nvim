@@ -3,8 +3,6 @@ vim.cmd [[ au BufNewFile,BufRead *.hx,*.hxml setfiletype haxe ]]
 local install_path = vim.fn.stdpath('data') .. '/site/tree-sitter-haxe'
 local haxe_ls_path = vim.env.HAXE_LANGUAGE_SERVER
 
-local has_notifier, notify = pcall(require, 'notify')
-
 -- Bootstrap Haxe-Treesitter
 local fn = vim.fn
 if fn.empty(fn.glob(install_path)) > 0 then
@@ -25,8 +23,6 @@ if ts_parsers_ok then
 		},
 		filetype = "hx",
 	}
-	-- copy treesitter queries to /site/pack/packer/start/nvim-treesitter/queries/haxe manually
-	-- os.execute('cp ' .. fn.stdpath('data') .. '/site/tree-sitter-haxe/queries/* ' .. fn.stdpath('data') .. '/site/pack/packer/start/nvim-treesitter/queries/haxe')
 end
 
 -- LSP for Haxe
@@ -54,5 +50,6 @@ if(fn.empty(fn.glob(hxls_bin))) > 0 then
 end
 
 lspconfig['haxe_language_server'].setup({
+	on_attach = require('lsp-format').on_attach,
 	cmd = {'node', hxls_bin},
 })

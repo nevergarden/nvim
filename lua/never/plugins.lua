@@ -28,27 +28,24 @@ packer.init {
 
 -- Intall Plugins
 return packer.startup(function(use)
-	use 'wbthomason/packer.nvim' -- Package Manager
-	use 'neovim/nvim-lspconfig'  -- Neovim LSP configurations
+	use 'wbthomason/packer.nvim'              -- Package Manager
+	use 'neovim/nvim-lspconfig'               -- Neovim LSP configurations
 
 	-- CMP
-	use 'hrsh7th/cmp-nvim-lsp'   -- CMP for language server
-  use 'hrsh7th/cmp-buffer'     -- CMP for buffer
-	use 'hrsh7th/cmp-path'       -- CMP for paths
-  use 'hrsh7th/cmp-cmdline'    -- CMP for commandline
-	use 'hrsh7th/nvim-cmp'       -- Neovim Completion
+	use 'hrsh7th/cmp-nvim-lsp'                -- CMP for language server
+  use 'hrsh7th/cmp-buffer'                  -- CMP for buffer
+	use 'hrsh7th/cmp-path'                    -- CMP for paths
+  use 'hrsh7th/cmp-cmdline'                 -- CMP for commandline
+	use 'hrsh7th/nvim-cmp'                    -- Neovim Completion
 
 	-- Snippet
-	use 'L3MON4D3/LuaSnip'       -- LuaSnip
-
-	-- Colorschemes
-	use 'morhetz/gruvbox'        -- Gruvbox colorscheme
+	use 'L3MON4D3/LuaSnip'                    -- LuaSnip
 
 	-- Treesitter
 	use {
-		'p00f/nvim-ts-rainbow',            -- Rainbow coloring
+		'p00f/nvim-ts-rainbow',                 -- Rainbow coloring
 		requires = {
-			'nvim-treesitter/nvim-treesitter',   -- Treesitter plugin
+			'nvim-treesitter/nvim-treesitter',    -- Treesitter plugin
 		},
 	}
 
@@ -56,7 +53,6 @@ return packer.startup(function(use)
 	use 'lukas-reineke/indent-blankline.nvim' -- Shows indentations
 	use 'andymass/vim-matchup'                -- Auto Matchup Start Ends
 	use 'nacro90/numb.nvim'                   -- Number peeking
-	-- use 'rcarriga/nvim-notify'                -- Nice Notifier
 
 	-- File Explorer
 	use {
@@ -101,6 +97,8 @@ return packer.startup(function(use)
 
 	-- Presence Discord
 	use { 'andweeb/presence.nvim' }
+
+	use 'lukas-reineke/lsp-format.nvim'
 
 	if packer_bootstrap then
 		require("packer").sync()
