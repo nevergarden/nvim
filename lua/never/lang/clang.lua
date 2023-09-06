@@ -3,4 +3,6 @@ if not lspconfig_status_ok then
 	return
 end
 
-lspconfig['clangd'].setup({})
+lspconfig['clangd'].setup({
+	on_attach = require("lsp-format").on_attach,
+})

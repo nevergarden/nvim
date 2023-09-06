@@ -1,6 +1,7 @@
 -- Config:
 require 'never.options'
 require 'never.plugins'
+require 'never.lspformat'
 require 'never.langs'
 require 'never.cmp'
 require 'never.extensions'
