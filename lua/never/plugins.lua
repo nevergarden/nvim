@@ -98,7 +98,11 @@ return packer.startup(function(use)
 	-- Presence Discord
 	use { 'andweeb/presence.nvim' }
 
+	-- LSP Format
 	use 'lukas-reineke/lsp-format.nvim'
+
+	-- Tagbar
+	use 'preservim/tagbar'
 
 	if packer_bootstrap then
 		require("packer").sync()
