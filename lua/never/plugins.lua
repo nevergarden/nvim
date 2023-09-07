@@ -107,6 +107,9 @@ return packer.startup(function(use)
 	-- Todo Highlighter
 	use 'folke/todo-comments.nvim'
 
+	-- Themes
+	use { "catppuccin/nvim", as = "catppuccin" }
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end
