@@ -17,7 +17,7 @@ local lualine_ok, lualine = pcall(require, 'lualine')
 if lualine_ok then
 	lualine.setup({
 		options = {
-			theme = '16color'
+			theme = 'auto'
 		}
 	})
 end
