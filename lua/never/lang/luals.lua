@@ -10,7 +10,7 @@ lspconfig['lua_ls'].setup({
 				version = 'LuaJIT',
 			},
 			diagnostics = {
-				globals = {'vim'},
+				globals = { 'vim' },
 			},
 			workspace = {
 				library = {

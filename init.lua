@@ -1,12 +1,8 @@
 -- Config:
 require 'never.options'
 require 'never.plugins'
-require 'never.lspformat'
 require 'never.langs'
 require 'never.cmp'
 require 'never.extensions'
 require 'never.mappings'
-require 'never.trouble'
 require 'never.nvimtree'
-require 'never.treesitter'
-require 'never.presence'

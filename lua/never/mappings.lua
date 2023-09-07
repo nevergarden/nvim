@@ -30,3 +30,6 @@ keymap("v", '>', '>gv', opts)
 
 -- Tagbar Hotkey
 keymap("", '<C-k>', ':Tagbar<CR>', opts)
+
+-- Format Hotkey
+keymap("n", '<C-f>', ':lua vim.lsp.buf.format()<CR>', opts)
