@@ -110,6 +110,15 @@ return packer.startup(function(use)
 	-- Themes
 	use { "catppuccin/nvim", as = "catppuccin" }
 
+	-- DAP + Telescope DAP
+	use {
+		"nvim-telescope/telescope-dap.nvim",
+		requires = {
+			'nvim-telescope/telescope.nvim',
+			'mfussenegger/nvim-dap',
+		},
+	}
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end

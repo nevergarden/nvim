@@ -59,3 +59,47 @@ if presence_ok then
 		line_number_text    = "Line %s out of %s",
 	})
 end
+
+local telescope_ok, telescope = pcall(require, 'telescope')
+
+if telescope_ok then
+	telescope.load_extension('dap')
+end
+
+local dap_ok, dap = pcall(require, 'dap')
+if dap_ok then
+	dap.adapters.lldb = {
+		type = 'executable',
+		command = '/usr/bin/lldb-vscode',
+		name = 'lldb'
+	}
+
+	dap.configurations.c = {
+		{
+			name = 'Launch C',
+			type = 'lldb',
+			request = 'launch',
+			program = function()
+				return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+			end,
+			cwd = '${workspaceFolder}',
+			stopOnEntry = false,
+			args = {},
+		},
+		{
+			name = 'Launch C 1 Arg',
+			type = 'lldb',
+			request = 'launch',
+			program = function()
+				return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+			end,
+			cwd = '${workspaceFolder}',
+			stopOnEntry = false,
+			args = {
+				function()
+					return vim.fn.input('Arg1: ')
+				end
+			},
+		}
+	}
+end
