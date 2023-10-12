@@ -119,6 +119,15 @@ return packer.startup(function(use)
 		},
 	}
 
+	-- BAR BAR! A Tab Bar!
+	use {
+		'romgrk/barbar.nvim',
+    requires = {
+      'lewis6991/gitsigns.nvim',
+      'nvim-tree/nvim-web-devicons',
+    },
+  }
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end
