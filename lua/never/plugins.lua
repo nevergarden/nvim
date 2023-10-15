@@ -37,6 +37,7 @@ return packer.startup(function(use)
 	use 'hrsh7th/cmp-path'    -- CMP for paths
 	use 'hrsh7th/cmp-cmdline' -- CMP for commandline
 	use 'hrsh7th/nvim-cmp'    -- Neovim Completion
+	use 'hrsh7th/cmp-nvim-lsp-signature-help' -- Signature helper
 
 	-- Snippet
 	use 'L3MON4D3/LuaSnip' -- LuaSnip
