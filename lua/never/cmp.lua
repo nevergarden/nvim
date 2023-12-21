@@ -14,31 +14,31 @@ local check_backspace = function()
 end
 
 local kind_icons = {
-  Text = "",
-  Method = "m",
-  Function = "",
+  Text = "󰦨",
+  Method = "",
+  Function = "󰡱",
   Constructor = "",
   Field = "",
-  Variable = "",
-  Class = "",
+  Variable = "",
+  Class = "",
   Interface = "",
-  Module = "",
+  Module = "󰕳",
   Property = "",
   Unit = "",
-  Value = "",
-  Enum = "",
-  Keyword = "",
-  Snippet = "",
-  Color = "",
-  File = "",
+  Value = "",
+	Enum = "",
+  Keyword = "",
+  Snippet = "",
+  Color = "󰌁",
+  File = "",
   Reference = "",
-  Folder = "",
+  Folder = "",
   EnumMember = "",
-  Constant = "",
+  Constant = "",
   Struct = "",
   Event = "",
-  Operator = "",
-  TypeParameter = "",
+  Operator = "",
+  TypeParameter = "",
 }
 
 cmp.setup {
@@ -92,9 +92,9 @@ cmp.setup {
       -- Kind icons
       vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
       vim_item.menu = ({
-        nvim_lsp = "[LSP]",
-        buffer = "[BUF]",
-        path = "[PATH]",
+        nvim_lsp = "",
+        buffer = "",
+        path = "",
       })[entry.source.name]
       return vim_item
     end,
