@@ -6,9 +6,9 @@ if status_ok then
 	installs.compilers = { 'clang' }
 
 	configs.setup({
-		ensure_installed = { 'c', 'cpp', 'lua', 'fish', 'java', 'python', 'rust'},
-		sync_install = true,
-		auto_install = false,
+		ensure_installed = { 'c', 'cpp', 'lua', 'fish', 'java', 'python', 'rust', 'haxe'},
+		sync_install = false,
+		auto_install = true,
 		highlight = {
 			enable = true,
 		},
