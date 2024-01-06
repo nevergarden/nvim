@@ -66,3 +66,6 @@ keymap('n', '<A-p>', '<Cmd>BufferPin<CR>', opts)
 keymap('n', '<A-c>', '<Cmd>BufferClose<CR>', opts)
 -- Magic buffer-picking mode
 keymap('n', '<A-p>', '<Cmd>BufferPick<CR>', opts)
+
+-- LSP Stuff
+keymap('n', 'gr', '<Cmd>lua vim.lsp.buf.references()<CR>', opts)
