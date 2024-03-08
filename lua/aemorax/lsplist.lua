@@ -1,0 +1,8 @@
+require 'aemorax.lsp.luals'
+require 'aemorax.lsp.clangd'
+require 'aemorax.lsp.cmake'
+require 'aemorax.lsp.haxelsp'
+require 'aemorax.lsp.zls'
+require 'aemorax.lsp.htmlls'
+require 'aemorax.lsp.cssls'
+require 'aemorax.lsp.tsserver'
