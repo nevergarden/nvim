@@ -4,7 +4,7 @@ vim.cmd([[
 	:hi PreProc ctermfg=white
 	:hi SpellCap ctermfg=white ctermbg=none
 	:hi Type ctermfg=yellow
-	:hi Comment ctermbg=none ctermfg=red cterm=underline
+	:hi Comment ctermbg=none ctermfg=grey cterm=underline
 	:hi Directory ctermfg=red cterm=underline
 	:hi Pmenu ctermbg=white
 	:hi Search ctermbg=white

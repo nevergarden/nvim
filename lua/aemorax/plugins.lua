@@ -92,6 +92,9 @@ return packer.startup(function(use)
 	-- Zenmode
 	use 'folke/zen-mode.nvim'
 
+	-- Tagbar
+	use 'preservim/tagbar'
+
 	if packer_bootstrap then
 		packer.sync()
 	end
