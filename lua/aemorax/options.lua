@@ -10,7 +10,6 @@ local options = {
 	signcolumn = "yes",        -- git gutter always have sign column
 	autoindent = false,        -- indent from last line
 	smartindent = true,
-	cursorline = true,
 }
 
 vim.opt.shortmess:append "c"

@@ -95,6 +95,13 @@ return packer.startup(function(use)
 	-- Tagbar
 	use 'preservim/tagbar'
 
+	use({
+		"roobert/action-hints.nvim",
+		config = function()
+			require("action-hints").setup()
+		end,
+	})
+
 	if packer_bootstrap then
 		packer.sync()
 	end

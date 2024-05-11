@@ -23,25 +23,6 @@ keymap("n", '<C-f>', ':lua vim.lsp.buf.format()<CR>', opts)
 -- LSP
 keymap('n', 'gr', '<Cmd>lua vim.lsp.buf.references()<CR>', opts)
 
--- Tabbar
-keymap('n', '<A-,>', '<Cmd>BufferPrevious<CR>', opts)
-keymap('n', '<A-.>', '<Cmd>BufferNext<CR>', opts)
-keymap('n', '<A-,>', '<Cmd>BufferPrevious<CR>', opts)
-keymap('n', '<A-.>', '<Cmd>BufferNext<CR>', opts)
-local opts = { noremap = true, silent = true }
--- local term_opts = { silent = true }
-
--- Shorthand function name
-local keymap = vim.api.nvim_set_keymap
-
--- Leader = <Space>
-keymap("", "<Space>", "<Nop>", opts)
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
-
--- Nvim Tree
-keymap("n", "<C-b>", ":NvimTreeToggle<CR>", opts)
-
 -- Hop Mappings
 keymap("n", 'f', ':HopWord<CR>', opts)
 
@@ -66,24 +47,19 @@ keymap("", '<C-k>', ':Tagbar<CR>', opts)
 -- Format Hotkey
 keymap("n", '<C-f>', ':lua vim.lsp.buf.format()<CR>', opts)
 
--- TABTAB!
-keymap('n', '<A-,>', '<Cmd>BufferPrevious<CR>', opts)
-keymap('n', '<A-.>', '<Cmd>BufferNext<CR>', opts)
-keymap('n', '<A-<>', '<Cmd>BufferMovePrevious<CR>', opts)
-keymap('n', '<A->>', '<Cmd>BufferMoveNext<CR>', opts)
-keymap('n', '<A-1>', '<Cmd>BufferGoto 1<CR>', opts)
-keymap('n', '<A-2>', '<Cmd>BufferGoto 2<CR>', opts)
-keymap('n', '<A-3>', '<Cmd>BufferGoto 3<CR>', opts)
-keymap('n', '<A-4>', '<Cmd>BufferGoto 4<CR>', opts)
-keymap('n', '<A-5>', '<Cmd>BufferGoto 5<CR>', opts)
-keymap('n', '<A-6>', '<Cmd>BufferGoto 6<CR>', opts)
-keymap('n', '<A-7>', '<Cmd>BufferGoto 7<CR>', opts)
-keymap('n', '<A-8>', '<Cmd>BufferGoto 8<CR>', opts)
-keymap('n', '<A-9>', '<Cmd>BufferGoto 9<CR>', opts)
-keymap('n', '<A-0>', '<Cmd>BufferLast<CR>', opts)
-keymap('n', '<A-p>', '<Cmd>BufferPin<CR>', opts)
-keymap('n', '<A-c>', '<Cmd>BufferClose<CR>', opts)
-keymap('n', '<A-p>', '<Cmd>BufferPick<CR>', opts)
+-- Tabbar
+keymap('n', '<Leader>,', '<Cmd>BufferPrevious<CR>', opts)
+keymap('n', '<Leader>.', '<Cmd>BufferNext<CR>', opts)
+keymap('n', '<Leader>1', '<Cmd>BufferGoto 1<CR>', opts)
+keymap('n', '<Leader>2', '<Cmd>BufferGoto 2<CR>', opts)
+keymap('n', '<Leader>0', '<Cmd>BufferLast<CR>', opts)
+keymap('n', '<Leader>c', '<Cmd>BufferClose<CR>', opts)
+
+-- Split Move
+keymap('n', '<Leader>h', '<C-w>h', opts)
+keymap('n', '<Leader>j', '<C-w>j', opts)
+keymap('n', '<Leader>k', '<C-w>k', opts)
+keymap('n', '<Leader>l', '<C-w>l', opts)
 
 -- Zenmode Toggle
 keymap('n', '<A-z>', ':ZenMode<CR>', opts)
